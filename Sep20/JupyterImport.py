@@ -13,6 +13,7 @@ from src.Characters import *
 from src.DataStandardize.Standardize_Util import wait_for  # Sets a thread waiting for a dat to finish
 from src.Plotting.Mpl import Plots as P, PlotUtil as PU
 from src.Plotting.Plotly import PlotlyUtil as PlU
+from src.Scripts import SquareEntropyAnalysis as EA
 
 #  Common packages I use
 import matplotlib as mpl

@@ -28,6 +28,7 @@ import lmfit as lm
 from typing import List, Tuple, Union, Set, NamedTuple, Dict, Optional  # Good for asserting types
 import logging
 from progressbar import progressbar
+from slugify import slugify  # For cleaning filename strings
 
 #  The Experiment's I'm currently working with. Makes it easier to get to Config/ESI/Fixes
 import src.DataStandardize.ExpSpecific.Sep20 as Sep20

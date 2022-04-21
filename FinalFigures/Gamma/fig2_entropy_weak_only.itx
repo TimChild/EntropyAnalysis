@@ -1,0 +1,49 @@
+IGOR
+WAVES /D /N=(9) 'fit_entropy_weak_only'
+BEGIN
+0.7402714173795086
+0.7220739499702846
+0.7011595986692507
+0.7564800399155089
+0.7425808543710941
+0.723749569746861
+0.7019877045022529
+0.6793407838495549
+0.6448594922322997
+
+
+END
+X SetScale d,0,0,"Entropy (kB)",'fit_entropy_weak_only'
+X SetScale /P x,-369.87,10.07,"Coupling Gate (mV)",'fit_entropy_weak_only'
+WAVES /D /N=(9) 'integrated_entropy_weak_only'
+BEGIN
+0.7144174974248735
+0.6939846729284489
+0.6844380531945935
+0.7176611530253906
+0.7415856919567416
+0.7170753531801968
+0.7114718535328428
+0.6953010293692858
+0.6546684739017999
+
+
+END
+X SetScale d,0,0,"Entropy (kB)",'integrated_entropy_weak_only'
+X SetScale /P x,-369.87,10.07,"Coupling Gate (mV)",'integrated_entropy_weak_only'
+WAVES /D /N=(9) 'integrated_peaks_weak_only'
+BEGIN
+1.0957615336529394
+1.083150674527446
+1.0762136919390508
+1.0991123897161066
+1.13649180513107
+1.1134875095985182
+1.1244125203934618
+1.1083272333136989
+1.0967715785677363
+
+
+END
+X SetScale d,0,0,"Entropy (kB)",'integrated_peaks_weak_only'
+X SetScale /P x,-369.87,10.07,"Coupling Gate (mV)",'integrated_peaks_weak_only'

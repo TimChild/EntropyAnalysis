@@ -6,6 +6,8 @@ import numpy as np
 
 
 ### setup figure
+import dat_analysis.analysis_tools.transition
+
 fig = plt.figure(figsize=dt.mm2inch((89 * 2, 140)))
 
 outer = gridspec.GridSpec(2, 1, height_ratios=[1.25, 1], hspace=0.2)
@@ -64,8 +66,8 @@ theta1 = 0.275  # mV
 theta2 = 0.600  # mV
 
 xnew = np.linspace(-500, -450, 500)
-g1 = dt.i_sense(xnew, V0, theta1, 0.045, 10e-4, 0.5)
-g2 = dt.i_sense(xnew, V0 + dV0, theta2, 0.045, 10e-4, 0.5)
+g1 = dat_analysis.analysis_tools.transition.i_sense(xnew, V0, theta1, 0.045, 10e-4, 0.5)
+g2 = dat_analysis.analysis_tools.transition.i_sense(xnew, V0 + dV0, theta2, 0.045, 10e-4, 0.5)
 ax1.plot(xnew, g1, c='C0')
 ax1.plot(xnew, g2, c='C3')
 ax1.fill_between(xnew, g1, g2, facecolor='C7', alpha=0.2)
@@ -73,8 +75,8 @@ ax1.vlines(V0, 0, 0.5, color='k', linestyle=":")
 ax1.hlines(0.5, -500, V0, color='k', linestyle=":")
 
 dV0 = -1.6 * 150 / 1000  # -1.6uV/mK*100mK in mV
-g1 = dt.i_sense(xnew, V0, theta1, 0.045, 10e-4, 0.5)
-g2s = dt.i_sense(xnew, V0 + dV0, theta2, 0.045, 10e-4, 0.5)
+g1 = dat_analysis.analysis_tools.transition.i_sense(xnew, V0, theta1, 0.045, 10e-4, 0.5)
+g2s = dat_analysis.analysis_tools.transition.i_sense(xnew, V0 + dV0, theta2, 0.045, 10e-4, 0.5)
 ax2.plot(xnew, g1, c='C0')
 ax2.plot(xnew, g2s, c='C3')
 ax2.fill_between(xnew, g1, g2s, facecolor='C7', alpha=0.2)

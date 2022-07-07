@@ -24,7 +24,7 @@ from dat_analysis.plotting.plotly import OneD, TwoD
 from dat_analysis.characters import DELTA
 from dat_analysis.useful_functions import mean_data
 from dat_analysis.hdf_util import NotFoundInHdfError
-from dat_analysis.analysis_tools.transition import linear_fit_thetas
+from dat_analysis.analysis_tools.transition import linear_fit_thetas, i_sense, get_param_estimates
 from Analysis.Feb2021.entropy_gamma_final import dT_from_linear
 
 if TYPE_CHECKING:
@@ -234,7 +234,6 @@ def plot_2d_i_sense(data: Data2D, title_prepend: str = '', trace_type='heatmap',
 
 def get_initial_params(data: Data1D, which='i_sense') -> lm.Parameters:
     """Get initial transition fit lm.Parameters for either simple i_sense or NRG fit"""
-    from dat_analysis.dat_object.attributes.transition import get_param_estimates
     initial_params = get_param_estimates(x=data.x, data=data.data)
     if which == 'nrg':
         theta = initial_params['theta'].value
@@ -260,7 +259,6 @@ def fit_single_transition(data: Data1D, fit_with: str = 'i_sense',
         The fit results of fitting
     """
     if fit_with == 'i_sense':
-        from dat_analysis.dat_object.attributes.transition import i_sense
         func = i_sense
         method = 'leastsq'
     elif fit_with == 'nrg':

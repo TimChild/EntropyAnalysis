@@ -13,7 +13,7 @@ if TYPE_CHECKING:
     pass
 
 
-def set_integration_info(dc_info: dcbias.DCbiasInfo, dat):
+def set_integration_info(dc_info: dcbias.QuadraticFitInfo, dat):
     dat.Entropy.set_integration_info(dc_info=dc_info)
 
 
@@ -38,7 +38,7 @@ if __name__ == '__main__':
         50: get_dats((8593, 8599), datname='s2e', exp2hdf=Sep20.SepExp2HDF),
     }
 
-    dc_bias_infos = {k: dcbias.DCbiasInfo.from_dats(dc_bias_dats[k], bias_key=bias_key, force_centered=False)
+    dc_bias_infos = {k: dcbias.QuadraticFitInfo.from_dats(dc_bias_dats[k], bias_key=bias_key, force_centered=False)
                      for k, bias_key in zip(dc_bias_dats, ['R2T(10M)', 'R2T/0.001'])}
 
     # dats = [get_dat(num, datname='s2e', exp2hdf=Sep20.SepExp2HDF, overwrite=False) for num in datnums]

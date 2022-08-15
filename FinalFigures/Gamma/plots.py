@@ -10,11 +10,11 @@ from matplotlib import pyplot as plt
 
 import dat_analysis.useful_functions as U
 
-from dat_analysis.dat_analysis.characters import DELTA, ALPHA
-import dat_analysis.plotting.mpl.PlotUtil as PU
+from dat_analysis.characters import DELTA, ALPHA
+import dat_analysis.plotting.mpl.util as PU
 import dat_analysis.plotting.mpl.AddCopyFig
 from dat_analysis import useful_functions as U
-from dat_analysis.plotting.mpl.Plots import display_2d
+from dat_analysis.plotting.mpl.plots import display_2d
 
 mpl.use('tkagg')
 # mpl.interactive(True)
